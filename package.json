@@ -52,7 +52,7 @@
   "types": "lib/index.d.ts",
   "devDependencies": {
     "@commercelayer/cli-dev": "^0.1.10",
-    "@oclif/plugin-help": "^5.1.16",
+    "@oclif/plugin-help": "^5.1.17",
     "@oclif/test": "^2.2.6",
     "@types/chai": "^4.3.3",
     "@types/mocha": "^9.1.1",
