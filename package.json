@@ -71,7 +71,7 @@
   "dependencies": {
     "@commercelayer/cli-core": "^2.0.0",
     "@commercelayer/js-auth": "^2.3.0",
-    "@commercelayer/sdk": "^4.18.0",
+    "@commercelayer/sdk": "^4.20.0",
     "@oclif/core": "^1.20.4",
     "open": "^8.4.0",
     "tslib": "^2.4.1"
