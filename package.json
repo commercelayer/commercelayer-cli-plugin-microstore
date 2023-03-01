@@ -57,7 +57,7 @@
     "@commercelayer/cli-dev": "^1.0.0",
     "@commercelayer/eslint-config-ts": "^0.1.4",
     "@oclif/plugin-help": "^5.2.2",
-    "@oclif/test": "^2.3.4",
+    "@oclif/test": "^2.3.8",
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.18",
