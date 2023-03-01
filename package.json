@@ -73,7 +73,7 @@
     "@commercelayer/js-auth": "^2.3.0",
     "@commercelayer/sdk": "^4.21.0",
     "@oclif/core": "^1.26.1",
-    "open": "^8.4.0",
+    "open": "^8.4.2",
     "tslib": "^2.5.0"
   },
   "publishConfig": {
