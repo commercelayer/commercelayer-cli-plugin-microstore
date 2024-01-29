@@ -35,8 +35,8 @@ devDependencies:
     specifier: ^2.5.6
     version: 2.5.6(@types/node@20.9.2)(typescript@5.0.4)
   '@types/chai':
-    specifier: ^4.3.10
-    version: 4.3.10
+    specifier: ^4.3.11
+    version: 4.3.11
   '@types/mocha':
     specifier: ^10.0.4
     version: 10.0.4
@@ -44,8 +44,8 @@ devDependencies:
     specifier: ^20.9.2
     version: 20.9.2
   chai:
-    specifier: ^4.3.10
-    version: 4.3.10
+    specifier: ^4.4.1
+    version: 4.4.1
   eslint:
     specifier: ^8.54.0
     version: 8.54.0
@@ -582,8 +582,8 @@ packages:
   /@tsconfig/node16@1.0.4:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
 
-  /@types/chai@4.3.10:
-    resolution: {integrity: sha512-of+ICnbqjmFCiixUnqRulbylyXQrPqIGf/B3Jax1wIF3DvSheysQxAWvqHhZiW3IQrycvokcLcFQlveGp+vyNg==}
+  /@types/chai@4.3.11:
+    resolution: {integrity: sha512-qQR1dr2rGIHYlJulmr8Ioq3De0Le9E4MJ5AiaeAETJJpndT1uUNHsGFK3L/UIu+rbkQSdj8J/w2bCsBZc/Y5fQ==}
     dev: true
 
   /@types/cli-progress@3.11.5:
@@ -1090,8 +1090,8 @@ packages:
       ansicolors: 0.3.2
       redeyed: 2.1.1
 
-  /chai@4.3.10:
-    resolution: {integrity: sha512-0UXG04VuVbruMUYbJ6JctvH0YnC/4q3/AkT18q4NaITo91CUm0liMS9VqzT9vZhVQ/1eqPanMWjBM+Juhfb/9g==}
+  /chai@4.4.1:
+    resolution: {integrity: sha512-13sOfMv2+DWduEU+/xbun3LScLoqN17nBeTLUsmDfKdoiC1fr0n9PU4guu4AhRcOVFk/sW8LyZWHuhWtQZiF+g==}
     engines: {node: '>=4'}
     dependencies:
       assertion-error: 1.1.0
@@ -1825,7 +1825,7 @@ packages:
     resolution: {integrity: sha512-TX8YTALYAmExny+f+G24MFxWry3Pk09+9uykwRjfwjibRxJ9ZjJzrnHYVBZK46XQdyli7d+rQc5U/KK7V6uLsw==}
     engines: {node: '>=12.0.0'}
     dependencies:
-      '@types/chai': 4.3.10
+      '@types/chai': 4.3.11
       '@types/lodash': 4.14.201
       '@types/node': 20.9.2
       '@types/sinon': 17.0.1
