@@ -68,7 +68,7 @@
     "typescript": "5.0.4"
   },
   "dependencies": {
-    "@commercelayer/cli-core": "^4.3.3",
+    "@commercelayer/cli-core": "^4.11.4",
     "@commercelayer/sdk": "^5.22.1",
     "@oclif/core": "^2.15.0",
     "open": "^8.4.2",

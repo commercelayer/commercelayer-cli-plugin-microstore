@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@commercelayer/cli-core':
-    specifier: ^4.3.3
-    version: 4.3.3(@types/node@20.9.2)(typescript@5.0.4)
+    specifier: ^4.11.4
+    version: 4.11.4(@types/node@20.9.2)(typescript@5.0.4)
   '@commercelayer/sdk':
     specifier: ^5.22.1
     version: 5.22.1
@@ -268,13 +268,13 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@commercelayer/cli-core@4.3.3(@types/node@20.9.2)(typescript@5.0.4):
-    resolution: {integrity: sha512-8j1IBfU6Dos7tPFhMU1vl2hIwQSkQO6EMGKMaOTuBy+mptwMJqrWN7OHsB/aG9jNXw8FC2Ng/aPt3NSBcNjaiA==}
+  /@commercelayer/cli-core@4.11.4(@types/node@20.9.2)(typescript@5.0.4):
+    resolution: {integrity: sha512-8IJEJy+vEvyW15LOOtH2l2F8Ut5+wY6lnXVupfbW2gArj5DYX01s2YLsJhtCySJZE5yWzrZtOFcDId9QLNCQ+w==}
     engines: {node: ^16.13.0 || >=18.0.0}
     dependencies:
       '@commercelayer/js-auth': 4.2.0
       '@oclif/core': 2.15.0(@types/node@20.9.2)(typescript@5.0.4)
-      axios: 1.6.1
+      axios: 1.6.5
       chalk: 4.1.2
       jsonwebtoken: 9.0.2
       update-notifier-cjs: 5.1.6
@@ -953,6 +953,16 @@ packages:
     resolution: {integrity: sha512-vfBmhDpKafglh0EldBEbVuoe7DyAavGSLWhuSm5ZSEKQnHhBf0xAAwybbNH1IkrJNGnS/VG4I5yxig1pCEXE4g==}
     dependencies:
       follow-redirects: 1.15.3
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
+  /axios@1.6.5:
+    resolution: {integrity: sha512-Ii012v05KEVuUoFWmMW/UQv9aRIc3ZwkWDcM+h5Il8izZCtRVpDUfwpoFf7eOtajT3QiGR4yDUx7lPqHJULgbg==}
+    dependencies:
+      follow-redirects: 1.15.5
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -1931,6 +1941,16 @@ packages:
 
   /follow-redirects@1.15.3:
     resolution: {integrity: sha512-1VzOtuEM8pC9SFU1E+8KfTjZyMztRsgEfwQl44z8A25uy13jSzTj6dyK2Df52iV0vgHCfBwLhDWevLn95w5v6Q==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: false
+
+  /follow-redirects@1.15.5:
+    resolution: {integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
