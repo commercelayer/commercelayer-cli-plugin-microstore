@@ -1,3 +1,16 @@
+# [3.1.0-beta.1](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/compare/v3.0.1...v3.1.0-beta.1) (2024-08-12)
+
+
+### Bug Fixes
+
+* fix linter ([ef4972b](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/ef4972b25fc5d664ce2db8b2c5c01d386e451062))
+
+
+### Features
+
+* add underscorize function ([f48aec4](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/f48aec4b7b99fe5001cd0468d80d5db6558b96f9))
+* add underscorize function ([7795d4f](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/7795d4f208d3e4938b6441cffb0cb17b2f5cabfe))
+
 ## [3.0.1](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/compare/v3.0.0...v3.0.1) (2024-06-19)
 
 
