@@ -40,37 +40,8 @@ export default abstract class extends Command {
     }),
     staging: Flags.boolean({
       description: 'connect to Microstore application in Staging environment',
-      hidden: true,
+      hidden: true
     })
-    /* ,
-    link: Flags.boolean({
-      char: 'l',
-      description: 'generate short link'
-    }),
-    client_id: Flags.string({
-      description: 'the application client_id',
-      hidden: true,
-      dependsOn: ['link'],
-      env: 'CL_CLI_CLIENT_ID'
-    }),
-    scope: Flags.string({
-      description: 'the application scope',
-      hidden: true,
-      dependsOn: ['link'],
-      env: 'CL_CLI_SCOPE'
-    }),
-    name: Flags.string({
-      char: 'n',
-      description: 'the name of the link',
-      hidden: true,
-      dependsOn: ['link']
-    }),
-    expires: Flags.string({
-      char: 'e',
-      description: 'the link\'s expiration date and time',
-      dependsOn: ['link']
-    })
-      */
   }
 
 

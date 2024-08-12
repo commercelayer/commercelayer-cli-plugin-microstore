@@ -1,7 +1,8 @@
- // import { Link, LinkCreate } from '@commercelayer/sdk'
+// import { Link, LinkCreate } from '@commercelayer/sdk'
+import { CommerceLayerClient, RetrievableResourceType } from '@commercelayer/sdk'
 import Command, { Flags } from '../../base'
-import { buildMicrostoreUrl, openMicrostoreUrl } from '../../url'
-import { clColor } from '@commercelayer/cli-core'
+import { buildMicrostoreUrl, MicrostoreLanguage, openMicrostoreUrl, UrlType } from '../../url'
+import { clApi, clColor, clText } from '@commercelayer/cli-core'
 
 
 export default class MicrostoreIndex extends Command {
@@ -11,7 +12,8 @@ export default class MicrostoreIndex extends Command {
   static examples = [
     '$ commercelayer microstore -S <sku-list-id>',
     '$ cl microstore -S <sku-list-id> --all --cart',
-    '$ cl microstore -S <sku-list-id> --cart --inline --open'
+    '$ cl microstore -S <sku-list-id> --cart --inline --open',
+    '$ cl microstore -K <sku-id> -l it'
   ]
 
   static flags = {
@@ -19,12 +21,16 @@ export default class MicrostoreIndex extends Command {
     skuListId: Flags.string({
       char: 'S',
       description: 'the sku list id',
-      required: true,
-      multiple: false
+      exclusive: ['skuId']
+    }),
+    skuId: Flags.string({
+      char: 'K',
+      description: 'the sku id'
     }),
     all: Flags.boolean({
       char: 'A',
-      description: `activate the ${clColor.italic('Buy All')} button `
+      description: `activate the ${clColor.italic('Buy All')} button`,
+      dependsOn: ['skuListId']
     }),
     cart: Flags.boolean({
       char: 'C',
@@ -34,6 +40,12 @@ export default class MicrostoreIndex extends Command {
       char: 'I',
       description: `disable redirect to ${clColor.italic('Cart')} application`,
       dependsOn: ['cart']
+    }),
+    lang: Flags.string({
+      char: 'l',
+      description: 'the language used for Microstore',
+      options: ['en', 'it'],
+      default: 'en'
     })
   }
 
@@ -46,62 +58,39 @@ export default class MicrostoreIndex extends Command {
     const domain = flags.domain
     const staging = flags.staging
     const accessToken = flags.accessToken
-    const skuListId = flags.skuListId
 
     this.checkAcessTokenData(accessToken, flags)
 
 
+    const lang = (flags.lang || 'en') as MicrostoreLanguage
+
+    const type: UrlType = flags.skuId ? 'sku' : 'sku-list'
+    const id: string = flags.skuId || flags.skuListId || ''
+    const label = clApi.humanizeResource(type)
+
+
     const cl = this.commercelayerInit(flags)
 
-    // Check SKU list existence
-    const skuList = await cl.sku_lists.retrieve(skuListId)
-    if (!skuList) this.error(`Inexistent sku list: ${clColor.msg.error(String(skuListId))}`)
+    // Check SKU or SKU list existence
+    await cl[clText.pluralize(type) as RetrievableResourceType].retrieve(id).catch(() => {
+      this.error(`Inexistent ${label}: ${clColor.msg.error(String(id))}`)
+    })
 
-    /*
-    if (flags.link) {
 
-      const now = new Date()
-      const expires = new Date(now.setDate(now.getDate() + 30)).toISOString()
-
-      const link: LinkCreate = {
-        client_id: this.checkRequiredAttribute(flags, 'client_id'),
-        scope: this.checkRequiredAttribute(flags, 'scope'),
-        name: `${flags.name || skuList.name} link`,
-        starts_at: now.toISOString(),
-        expires_at: this.checkRequiredAttribute(flags, 'expires', expires),
-        item: cl.sku_lists.relationship(skuList)
-      }
-
-      const newLink = await cl.links.create(link)
-
-      this.log(`\n${clColor.style.success('Successfully')} created new link with id ${clColor.style.id(newLink.id)} for the sku list ${clColor.cli.value(skuList.name)}\n`)
-
-      const url = newLink.url
-      if (!url) this.error('Link created but no URL provided')
-
-      this.log(`\nLink URL for sku list ${clColor.api.id(skuListId)}:\n`)
-      this.log(clColor.cyanBright(url))
-      this.log()
-
-      if (flags.open) await openMicrostoreUrl(url)
-
-    } else {
-    */
-    const microstoreUrl = buildMicrostoreUrl(organization, skuListId, accessToken, {
+    const microstoreUrl = buildMicrostoreUrl(organization, type, id, accessToken, {
       all: flags.all,
+      lang,
       cart: flags.cart,
       inline: flags.inline,
       domain,
       staging
     })
 
-    this.log(`\nMicrostore URL for sku list ${clColor.api.id(skuListId)}:\n`)
+    this.log(`\nMicrostore URL for ${label} ${clColor.api.id(id)}:\n`)
     this.log(clColor.cyanBright(microstoreUrl))
     this.log()
 
     if (flags.open) await openMicrostoreUrl(microstoreUrl)
-
-    // }
 
   }
 
