@@ -3,8 +3,12 @@ import type { ChildProcess } from 'child_process'
 import open from 'open'
 
 
+export type MicrostoreLanguage = 'en' | 'it'
+
+
 type MicrostoreOptions = {
-  all: boolean
+  all: boolean,
+  lang: MicrostoreLanguage
 } & (
   {
     cart: false | undefined
@@ -23,14 +27,19 @@ export type UrlOptions = {
 } & MicrostoreOptions
 
 
+export type UrlType = 'sku' | 'sku-list'
 
-const buildMicrostoreUrl = (organization: string, skuListId: string, accessToken: string, options: UrlOptions): string => {
+
+
+const buildMicrostoreUrl = (organization: string, type: UrlType, id: string, accessToken: string, options: UrlOptions): string => {
 
   const subdomain = options?.staging? 'stg.' : ''
   const domain = `${subdomain}${options?.domain || clConfig.api.default_app_domain}`
   const baseUrl = clApi.baseURL('core', organization, domain)
 
-  let microstoreUrl = `${baseUrl}/microstore/list/${skuListId}?accessToken=${accessToken}`
+  const path = (type === 'sku')? 'sku' : 'list'
+
+  let microstoreUrl = `${baseUrl}/microstore/${path}/${id}?accessToken=${accessToken}`
   if (options.all) microstoreUrl += '&all=true'
   if (options.cart) microstoreUrl += '&cart=true'
   if (options.cart && options.inline) microstoreUrl += '&inline=true'
