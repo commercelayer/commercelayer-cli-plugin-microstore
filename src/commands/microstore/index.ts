@@ -1,7 +1,7 @@
 // import { Link, LinkCreate } from '@commercelayer/sdk'
-import { CommerceLayerClient, RetrievableResourceType } from '@commercelayer/sdk'
+import type { RetrievableResourceType } from '@commercelayer/sdk'
 import Command, { Flags } from '../../base'
-import { buildMicrostoreUrl, MicrostoreLanguage, openMicrostoreUrl, UrlType } from '../../url'
+import { buildMicrostoreUrl, type MicrostoreLanguage, openMicrostoreUrl, type UrlType } from '../../url'
 import { clApi, clColor, clText } from '@commercelayer/cli-core'
 
 
@@ -72,7 +72,8 @@ export default class MicrostoreIndex extends Command {
     const cl = this.commercelayerInit(flags)
 
     // Check SKU or SKU list existence
-    await cl[clText.pluralize(type) as RetrievableResourceType].retrieve(id).catch(() => {
+    console.log(clText.underscorize(clText.pluralize(type)))
+    await cl[clText.underscorize(clText.pluralize(type)) as RetrievableResourceType].retrieve(id).catch(() => {
       this.error(`Inexistent ${label}: ${clColor.msg.error(String(id))}`)
     })
 
