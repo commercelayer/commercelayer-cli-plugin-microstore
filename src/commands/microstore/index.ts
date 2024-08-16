@@ -39,7 +39,9 @@ export default class MicrostoreIndex extends Command {
     inline: Flags.boolean({
       char: 'I',
       description: `disable redirect to ${clColor.italic('Cart')} application`,
-      dependsOn: ['cart']
+      dependsOn: ['cart'],
+      allowNo: true,
+      default: true
     }),
     lang: Flags.string({
       char: 'l',
