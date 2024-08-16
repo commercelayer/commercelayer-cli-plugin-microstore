@@ -1,3 +1,10 @@
+# [3.1.0-beta.2](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/compare/v3.1.0-beta.1...v3.1.0-beta.2) (2024-08-16)
+
+
+### Bug Fixes
+
+* add --no-inline flag ([c3368bc](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/c3368bcc22f5932fc6f4f9e0df8f47482ac1582c))
+
 # [3.1.0-beta.1](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/compare/v3.0.1...v3.1.0-beta.1) (2024-08-12)
 
 
