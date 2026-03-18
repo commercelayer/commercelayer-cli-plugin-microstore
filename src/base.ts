@@ -1,10 +1,10 @@
-import commercelayer, { type CommerceLayerClient, CommerceLayerStatic } from '@commercelayer/sdk'
-import { Command, Flags } from '@oclif/core'
+import { CommerceLayer, type CommerceLayerBundle } from '@commercelayer/sdk/bundle'
+import { Command, Flags, type Interfaces } from '@oclif/core'
 import { clColor, clOutput, clToken, clUpdate, clUtil } from '@commercelayer/cli-core'
-import type { CommandError } from '@oclif/core/lib/interfaces'
 
 
-const pkg: clUpdate.Package = require('../package.json')
+
+import pkg from '../package.json' with { type: 'json' }
 
 
 const REQUIRED_APP_KIND = 'sales_channel'
@@ -45,6 +45,8 @@ export default abstract class extends Command {
   }
 
 
+  protected cl!: CommerceLayerBundle
+
   // INIT (override)
   async init(): Promise<any> {
     clUpdate.checkUpdate(pkg)
@@ -52,36 +54,41 @@ export default abstract class extends Command {
   }
 
 
-  async catch(error: any): Promise<any> {
+  async catch(error: Interfaces.CommandError): Promise<any> {
     return this.handleError(error)
   }
 
 
-  protected async handleError(error: any, flags?: any): Promise<any> {
-    if (CommerceLayerStatic.isApiError(error)) {
+
+  protected async handleError(error: unknown, flags?: any): Promise<any> {
+    if (this.cl.isApiError(error)) {
       if (error.status === 401) {
         const err = error.first()
         this.error(clColor.msg.error(`${err.title}:  ${err.detail}`),
           { suggestions: ['Execute login to get access to the organization\'s resources'] },
         )
       } else this.error(clOutput.formatError(error, flags))
-    } else return super.catch(error as CommandError)
+    } else return super.catch(error as Error)
   }
 
 
-  protected commercelayerInit(flags: any): CommerceLayerClient {
+  protected commercelayerInit(flags: any): CommerceLayerBundle {
+
+    if (this.cl) return this.cl
 
     const organization = flags.organization
     const domain = flags.domain
     const accessToken = flags.accessToken
     const userAgent = clUtil.userAgent(this.config)
 
-    return commercelayer({
+    this.cl = CommerceLayer({
       organization,
       domain,
       accessToken,
       userAgent
     })
+
+    return this.cl
 
   }
 

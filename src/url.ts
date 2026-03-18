@@ -28,6 +28,7 @@ export type UrlOptions = {
 
 
 export type UrlType = 'sku' | 'sku-list'
+export type UrlResType = 'skus' | 'sku_lists'
 
 
 
