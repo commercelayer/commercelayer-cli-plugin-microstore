@@ -1,3 +1,34 @@
+# [4.0.0-beta.1](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/compare/v3.1.0-beta.2...v4.0.0-beta.1) (2026-03-18)
+
+
+### Bug Fixes
+
+* fix codeql action ([2db9f1d](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/2db9f1dd9821bbf659d8b11ff4b59cef61911f0a))
+* fix release script ([67db9fc](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/67db9fca13a09823b8af63a6a790450ae5448b16))
+* fix security issue ([1ebc036](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/1ebc036b7644650b43aaa461d1fd03e966bb0fdf))
+* fix security issue ([657072c](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/657072c723d265fe8f175246d8f9000c53430832))
+* fix vulnerability issues ([948914b](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/948914b2d06a75f171b405ed6991dadf0d9a22c6))
+* update dependencies ([17a9b38](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/17a9b3807be06369ecdefe1a1db921f624a630b7))
+* update dependencies ([e9952dd](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/e9952ddcdac8725099908d13516a41b6d6c85c27))
+* update dependencies ([a043fb1](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/a043fb16a8ae7302c437a1781ddd18585e62892e))
+* update dependencies ([f9b7d01](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/f9b7d0119f5e02b26a947ad162b4dc4f00913623))
+* update dependencies ([cadca75](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/cadca75f65be4523e4dfa88304090148baf3e224))
+* update dependencies ([d5a5b39](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/d5a5b39a65b30cdcea21e0fb8d1ff52c01619aef))
+* update readme and dependencies ([34211ca](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/34211cad7eee169869ac0f4f9d2d66e5ee427b8b))
+* updatecli-core to latest version ([3976371](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/3976371428770be23443ac77d86a244cfb6590fe))
+
+
+### Features
+
+* upgrade oclif core to v4 ([398a3e8](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/398a3e85ec88bfe9b969fe1c4f7961ef11b3f570))
+* upgrade oclif core to v4 ([2c6d49f](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/2c6d49f7d182b55c58373e43c891b5dbf51c38ad))
+
+
+### BREAKING CHANGES
+
+* upgrade oclif core to v4
+* pgrade oclif core to v4
+
 # [3.1.0-beta.2](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/compare/v3.1.0-beta.1...v3.1.0-beta.2) (2024-08-16)
 
 
