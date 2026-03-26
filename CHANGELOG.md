@@ -1,3 +1,17 @@
+## [3.1.1](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/compare/v3.1.0...v3.1.1) (2026-03-24)
+
+
+### Bug Fixes
+
+* update dependencies ([b14c75b](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/b14c75bb9bd173c30b976c8f70742b843b729113))
+
+# [3.1.0](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/compare/v3.0.14...v3.1.0) (2026-03-24)
+
+
+### Features
+
+* add biome ([d8f9737](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/commit/d8f973739c334356df1daca3b07c1b27b1c9cc00))
+
 ## [3.0.14](https://github.com/commercelayer/commercelayer-cli-plugin-microstore/compare/v3.0.13...v3.0.14) (2026-03-16)
 
 
